@@ -30,6 +30,8 @@
               type="text"
               id="name"
               name="name"
+              maxlength="20"
+              required
             >
           </div>
 
@@ -41,6 +43,8 @@
                 type="text"
                 id="description"
                 name="description"
+                maxlength="100"
+                required
               >
             </div>
 
@@ -51,6 +55,8 @@
                 type="number"
                 id="price"
                 name="price"
+                maxlength="10"
+                required
               >
             </div>
           </div>
@@ -62,6 +68,7 @@
               type="radio"
               id="available"
               name="available"
+              required
             >
           </div>
 
@@ -79,6 +86,7 @@
             Agregar
           </button>
           
+          
           <div id="alert-container"></div>
           </div>
         </form>
@@ -87,4 +95,6 @@
   </div>
 </section>
 {% endblock content %}
+
+
 
