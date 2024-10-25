@@ -1,6 +1,87 @@
-<h1>Agregar Producto</h1>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Agregar</button>
-</form>
+{% extends "base.html" %}
+{% block content %}
+
+<section class="bg-gray-100">
+  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+      <div class="lg:col-span-2 lg:py-12">
+        <p class="max-w-xl text-lg">
+          ¡Bienvenido a TuTien! Aquí encontrarás todo lo que buscas y más.
+          Explora nuestro amplio catálogo de productos y déjate sorprender."
+        </p>
+
+        <div class="mt-8">
+          <a href="#" class="text-2xl font-bold text-blue-600">
+            0414-1072181
+          </a>
+
+          <address class="mt-2 not-italic">Caracas-Venezuela</address>
+        </div>
+      </div>
+
+      <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+        <h1 class="text-3xl font-bold text-center text-blue-600">Agregar Producto</h1> <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <div class="mb-4">
+            <label for="{{ form.name.id_for_label }}">Nombre del producto</label>
+            <input
+              class="w-full rounded-lg border border-gray-400 p-3 text-sm" placeholder="Agregar nombre"
+              type="text"
+              id="name"
+              name="name"
+            >
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 mb-4">
+            <div>
+              <label for="{{ form.description.id_for_label }}">Descripción del producto</label>
+              <input
+                class="w-full rounded-lg border border-gray-400 p-3 text-sm" placeholder="Agregar descripción"
+                type="text"
+                id="description"
+                name="description"
+              >
+            </div>
+
+            <div>
+              <label for="{{ form.price.id_for_label }}">Precio del producto</label>
+              <input
+                class="w-full rounded-lg border border-gray-400 p-3 text-sm" placeholder="valor del producto"
+                type="number"
+                id="price"
+                name="price"
+              >
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label for="{{ form.available.id_for_label }}">Disponibilidad</label>
+            <input
+              class="w-full rounded-lg border border-gray-400 p-3 text-sm" placeholder=""
+              type="radio"
+              id="available"
+              name="available"
+            >
+          </div>
+
+          <div class="mb-4">
+            <label for="{{ form.photo.id_for_label }}">Foto del producto</label>
+            <input
+              class="w-full rounded-lg border border-gray-400 p-3 text-sm" placeholder="Name"
+              type="file"
+              id="photo"
+              name="photo"
+            >
+          </div>
+
+          <div class="text-center mt-4"> <button class="text-xl font-bold text-blue-600 border border-gray-400 rounded-lg px-4 py-2 hover:bg-gray-200" type="submit">
+              Agregar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
